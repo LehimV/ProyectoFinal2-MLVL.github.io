@@ -24,10 +24,7 @@ const newCard = (obj) => {
               <p class="countryRegion m-0"><span class="fw-bold">Region: </span>${obj.region}</p>
               <p class="countryCapital"><span class="fw-bold">Capital: </span>${obj.capital}</p>              
             </div>
-          </div>
-        
-      
-      
+          </div>       
           `;
 
   return div;

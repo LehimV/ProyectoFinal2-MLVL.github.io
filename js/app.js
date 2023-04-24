@@ -16,6 +16,9 @@ datos.forEach((element) => {
 });
 
 /**** FILTRO SEARCH FORM ****/
+const formSearch = document.querySelector("#formCountrySearch");
+const searchInput = document.querySelector("#countrySearch");
+
 formSearch.addEventListener("keyup", async (e) => {
   e.preventDefault();
 
@@ -30,10 +33,7 @@ formSearch.addEventListener("keyup", async (e) => {
   });
 });
 
-/*const formSearch = document.querySelector("#formCountrySearch");
-const searchInput = document.querySelector("#countrySearch");
-
-const formularioSearch_filter = (data) => {
+/*const formularioSearch_filter = (data) => {
   console.log(data);
   formSearch.addEventListener("keyup", async (e) => {
     e.preventDefault();

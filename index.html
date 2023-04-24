@@ -44,7 +44,9 @@
       </div>
     </nav>
     <main>
+      <!------- Filtros ------->
       <section class="navbar d-flex container justify-content-between my-5">
+        <!-----Filtro de países----->
         <div id="formContainer" class="py-1 shadow rounded-3">
           <form
             class="form-control d-flex align-items-center border-0"
@@ -62,6 +64,7 @@
           </form>
         </div>
 
+        <!-----Filtro por Regiones----->
         <div class="dropdown">
           <button
             id="selectRegion"
@@ -72,11 +75,11 @@
             Filter by Region
           </button>
           <ul class="dropdown-menu shadow">
-            <li><a class="dropdown-item" href="#">Africa</a></li>
-            <li><a class="dropdown-item" href="#">America</a></li>
-            <li><a class="dropdown-item" href="#">Asia</a></li>
-            <li><a class="dropdown-item" href="#">Europe</a></li>
-            <li><a class="dropdown-item" href="#">Oceania</a></li>
+            <li><a id="region_btn" class="dropdown-item">Africa</a></li>
+            <li><a id="region_btn" class="dropdown-item">America</a></li>
+            <li><a id="region_btn" class="dropdown-item">Asia</a></li>
+            <li><a id="region_btn" class="dropdown-item">Europe</a></li>
+            <li><a id="region_btn" class="dropdown-item">Oceania</a></li>
           </ul>
         </div>
       </section>

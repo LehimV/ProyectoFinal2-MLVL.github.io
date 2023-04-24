@@ -28,8 +28,8 @@ const getData = async (url) => {
 /**** FILTRO SEARCH ****/
 function filterSearchCountries(data, searchName) {
   const filteredData = data.filter((name) => {
-    const countySearch = name.name.common.toLowerCase();
-    return countySearch.includes(searchName.toLowerCase());
+    const countrySearch = name.name.common.toLowerCase();
+    return countrySearch.includes(searchName.toLowerCase());
   });
   return filteredData;
 }
