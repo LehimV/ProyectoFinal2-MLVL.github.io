@@ -25,6 +25,16 @@ const getData = async (url) => {
   return data;
 };
 
+/**** FILTRO SEARCH ****/
+function filterSearchCountries(data, searchName) {
+  const filteredData = data.filter((name) => {
+    const countySearch = name.name.common.toLowerCase();
+    return countySearch.includes(searchName.toLowerCase());
+  });
+  return filteredData;
+}
+
 export default {
   getData,
+  filterSearchCountries,
 };

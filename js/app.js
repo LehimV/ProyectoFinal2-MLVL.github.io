@@ -14,3 +14,49 @@ datos.forEach((element) => {
   const card = dom.newCard(element);
   dom.$("#countries").appendChild(card);
 });
+
+/**** FILTRO SEARCH FORM ****/
+formSearch.addEventListener("keyup", async (e) => {
+  e.preventDefault();
+
+  const searchName = searchInput.value;
+
+  const filteredData = data.filterSearchCountries(datos, searchName);
+
+  dom.$("#countries").innerHTML = "";
+  filteredData.forEach((element) => {
+    const card = dom.newCard(element);
+    dom.$("#countries").appendChild(card);
+  });
+});
+
+/*const formSearch = document.querySelector("#formCountrySearch");
+const searchInput = document.querySelector("#countrySearch");
+
+const formularioSearch_filter = (data) => {
+  console.log(data);
+  formSearch.addEventListener("keyup", async (e) => {
+    e.preventDefault();
+
+    const textForm = searchInput.value.toLowerCase();
+    //console.log(textForm);
+
+    const searchFiltrado = data.filter((item) => {
+      const countryName = item.name.common.toLowerCase();
+      if (countryName.indexOf(textForm) !== -1) {
+        return item;
+      }
+    });
+    dom.$("#countries").innerHTML = "";
+    if (searchFiltrado.length === 0 && textForm !== "") {
+      dom.$("#countries").innerHTML = "<p>No se encontraron resultados.</p>";
+    } else {
+      searchFiltrado.forEach((element) => {
+        const card = dom.newCard(element);
+        dom.$("#countries").appendChild(card);
+      });
+    }
+  });
+};
+
+formularioSearch_filter(datos);*/
