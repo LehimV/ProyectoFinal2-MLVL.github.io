@@ -26,8 +26,8 @@ datos.forEach((element) => {
   const card = dom.newCard(element);
   card.addEventListener("click", () => {
     const modalContent = dom.infoModal(element);
-    dom.$("#bodyCardModal").innerHTML = "";
-    dom.$("#bodyCardModal").appendChild(modalContent);
+    dom.$("#modal-body").innerHTML = "";
+    dom.$("#modal-body").appendChild(modalContent);
     //dom.showModal();
   });
   dom.$("#countries").appendChild(card);
