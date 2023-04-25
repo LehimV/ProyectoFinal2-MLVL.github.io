@@ -1,5 +1,5 @@
-import data from "./data.js";
 import dom from "./dom.js";
+import data from "./data.js";
 
 const URL = "https://restcountries.com/v3.1/all";
 const datos = await data.getData(URL);
@@ -14,8 +14,22 @@ darkBtn2.addEventListener("click", () => {
   html.dataset.bsTheme = html.dataset.bsTheme == "dark" ? "light" : "dark";
 });
 
+/******* INSERCIÓN DE CARDS *******/
+//--Inserta las cards de los Paises
+/*
 datos.forEach((element) => {
   const card = dom.newCard(element);
+  dom.$("#countries").appendChild(card);
+});*/
+
+datos.forEach((element) => {
+  const card = dom.newCard(element);
+  card.addEventListener("click", () => {
+    const modalContent = dom.infoModal(element);
+    dom.$("#bodyCardModal").innerHTML = "";
+    dom.$("#bodyCardModal").appendChild(modalContent);
+    //dom.showModal();
+  });
   dom.$("#countries").appendChild(card);
 });
 
@@ -35,7 +49,7 @@ formSearch.addEventListener("keyup", async (e) => {
   });
 });
 
-/**** Click filtro REGIONES FORM ****/
+/**** Evento Click para el filtro de REGIONES FORM ****/
 const selectRegion = dom.$("#selectRegion");
 const regiones = dom.$("#regiones");
 
@@ -50,7 +64,6 @@ regiones.addEventListener("click", async (e) => {
 
   //modifica el dom de las regiones
   // dom.updateRegions(region);
-
   dom.$("#countries").innerHTML = "";
   filteredRegion.forEach((element) => {
     const card = dom.newCard(element);
@@ -58,31 +71,4 @@ regiones.addEventListener("click", async (e) => {
   });
 });
 
-//
-/*const formularioSearch_filter = (data) => {
-  console.log(data);
-  formSearch.addEventListener("keyup", async (e) => {
-    e.preventDefault();
-
-    const textForm = searchInput.value.toLowerCase();
-    //console.log(textForm);
-
-    const searchFiltrado = data.filter((item) => {
-      const countryName = item.name.common.toLowerCase();
-      if (countryName.indexOf(textForm) !== -1) {
-        return item;
-      }
-    });
-    dom.$("#countries").innerHTML = "";
-    if (searchFiltrado.length === 0 && textForm !== "") {
-      dom.$("#countries").innerHTML = "<p>No se encontraron resultados.</p>";
-    } else {
-      searchFiltrado.forEach((element) => {
-        const card = dom.newCard(element);
-        dom.$("#countries").appendChild(card);
-      });
-    }
-  });
-};
-
-formularioSearch_filter(datos);*/
+//MODAL
