@@ -6,7 +6,11 @@ const datos = await data.getData(URL);
 const html = document.querySelector("html");
 console.log(html.dataset);
 const darkBtn = document.querySelector("#btn-darkMode");
+const darkBtn2 = document.querySelector("#btn2-darkMode");
 darkBtn.addEventListener("click", () => {
+  html.dataset.bsTheme = html.dataset.bsTheme == "dark" ? "light" : "dark";
+});
+darkBtn2.addEventListener("click", () => {
   html.dataset.bsTheme = html.dataset.bsTheme == "dark" ? "light" : "dark";
 });
 
@@ -23,9 +27,7 @@ formSearch.addEventListener("keyup", async (e) => {
   e.preventDefault();
 
   const searchName = searchInput.value;
-
   const filteredData = data.filterSearchCountries(datos, searchName);
-
   dom.$("#countries").innerHTML = "";
   filteredData.forEach((element) => {
     const card = dom.newCard(element);
@@ -33,6 +35,30 @@ formSearch.addEventListener("keyup", async (e) => {
   });
 });
 
+/**** Click filtro REGIONES FORM ****/
+const selectRegion = dom.$("#selectRegion");
+const regiones = dom.$("#regiones");
+
+selectRegion.addEventListener("click", () => {
+  regiones.classList.toggle("dropdown");
+});
+
+regiones.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const region = e.target.textContent;
+  const filteredRegion = data.filterRegion(datos, region);
+
+  //modifica el dom de las regiones
+  // dom.updateRegions(region);
+
+  dom.$("#countries").innerHTML = "";
+  filteredRegion.forEach((element) => {
+    const card = dom.newCard(element);
+    dom.$("#countries").appendChild(card);
+  });
+});
+
+//
 /*const formularioSearch_filter = (data) => {
   console.log(data);
   formSearch.addEventListener("keyup", async (e) => {

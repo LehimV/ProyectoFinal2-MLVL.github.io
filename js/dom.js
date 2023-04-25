@@ -19,7 +19,9 @@ const newCard = (obj) => {
               <img id="imgCountry" src="${obj.flags.svg}" class="imgCard card-img-top" alt="${obj.name.common}, flag" />
             </div>
             <div class="card-body mt-3 ms-4">
-              <p class="countryName fs-5 fw-bold">${obj.name.common}</p>
+              <p type="button" class="countryName btn border-0 p-0 fs-5 fw-bold"
+                 data-bs-toggle="modal" data-bs-target="#countriesModal">
+                 ${obj.name.common}</p>
               <p class="countryPopulation m-0"><span class="fw-bold">Population: </span>${numConvertido}</p>
               <p class="countryRegion m-0"><span class="fw-bold">Region: </span>${obj.region}</p>
               <p class="countryCapital"><span class="fw-bold">Capital: </span>${obj.capital}</p>              
@@ -29,8 +31,20 @@ const newCard = (obj) => {
 
   return div;
 };
+/* 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button> 
+
+<p class="countryName fs-5 fw-bold">${obj.name.common}</p>
+*/
+/***** Actualizar DOM de las regiones*****/
+const updateRegions = (text) => {
+  dom.$("#selectRegion").textContent = text;
+};
 
 export default {
   $,
   newCard,
+  updateRegions,
 };

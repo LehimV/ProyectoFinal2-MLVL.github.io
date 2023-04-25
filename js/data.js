@@ -34,7 +34,14 @@ function filterSearchCountries(data, searchName) {
   return filteredData;
 }
 
+/**** FILTRO DE REGIONES ****/
+function filterRegion(data, region) {
+  const filteredRegion = data.filter((country) => country.region === region);
+  return filteredRegion;
+}
+
 export default {
   getData,
   filterSearchCountries,
+  filterRegion,
 };

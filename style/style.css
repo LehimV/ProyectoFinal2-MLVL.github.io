@@ -25,6 +25,10 @@
     height: 250px;
     object-fit: cover;
   }
+
+  #modalFlag {
+    max-width: 90%;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -32,6 +36,26 @@
     height: 80%;
     object-fit: cover;
   }
+}
+
+/******MODAL******/
+/*
+.fade:not(.show) {
+  opacity: 1;
+}*/
+
+/*
+#borderCountries {
+  display: flex;
+  flex-wrap: wrap;
+}*/
+
+#btnBack {
+  font-size: 15px;
+}
+
+.btnBorders {
+  font-size: 13px;
 }
 
 /*

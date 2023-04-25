@@ -34,7 +34,7 @@
     <title>Proyecto Final2-MLVL</title>
   </head>
   <body>
-    <nav class="navbar border-bottom-2 shadow">
+    <nav di="navMain" class="navbar border-bottom-2 shadow">
       <div class="container d-flex p-2">
         <h1 class="fs-4 fw-bold">Where in the world?</h1>
         <button id="btn-darkMode" class="btn">
@@ -74,15 +74,122 @@
           >
             Filter by Region
           </button>
-          <ul class="dropdown-menu shadow">
-            <li><a id="region_btn" class="dropdown-item">Africa</a></li>
-            <li><a id="region_btn" class="dropdown-item">America</a></li>
-            <li><a id="region_btn" class="dropdown-item">Asia</a></li>
-            <li><a id="region_btn" class="dropdown-item">Europe</a></li>
-            <li><a id="region_btn" class="dropdown-item">Oceania</a></li>
+          <ul id="regiones" class="dropdown-menu shadow">
+            <li><a id="reg_africa" class="dropdown-item">Africa</a></li>
+            <li><a id="reg_americas" class="dropdown-item">Americas</a></li>
+            <li><a id="reg_asia" class="dropdown-item">Asia</a></li>
+            <li><a id="reg_europe" class="dropdown-item">Europe</a></li>
+            <li><a id="reg_oceania" class="dropdown-item">Oceania</a></li>
           </ul>
         </div>
       </section>
+
+      <!------- MODAL CLICK EN PAISES ------->
+      <div
+        class="modal fade"
+        id="countriesModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <nav class="navbar border-bottom-2 shadow">
+              <div class="container d-flex">
+                <h1 class="fs-4 fw-bold">Where in the world?</h1>
+                <button id="btn2-darkMode" class="btn">
+                  <span class="material-symbols-outlined align-middle"> dark_mode </span>
+                  Dark Mode
+                </button>
+              </div>
+            </nav>
+            <!----- Boton Regresar ----->
+            <div class="modal-body">
+              <section class="container my-5">
+                <button class="btn pe-4 py-2 shadow">
+                  <span
+                    type="button"
+                    class="material-symbols-outlined d-flex align-items-center"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    arrow_back
+                    <div id="btnBack" class="ms-2">Back</div>
+                  </span>
+                </button>
+              </section>
+              <!----- MODAL Card Country  ----->
+              <section id="modalCard">
+                <div class="card m-auto mb-3" style="max-width: 88%">
+                  <div class="row g-0">
+                    <div class="col-md-6">
+                      <img
+                        id="modalFlag"
+                        src="https://flagcdn.com/ax.svg"
+                        class="d-flex m-auto w-100 h-100"
+                        alt="Country Flag"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body row mt-5 ms-0">
+                        <div class="col">
+                          <p class="m_c_name">${obj.name.common}</p>
+                          <p class="m_c_native">
+                            <span class="fw-bold">Native Name: </span>${obj.nativeName}
+                          </p>
+
+                          <p class="m_c_popula">
+                            <span class="fw-bold">Population: </span>${numConvertido}
+                          </p>
+
+                          <p class="m_c_region">
+                            <span class="fw-bold">Region: </span>${obj.region}
+                          </p>
+
+                          <p class="m_c_subRegion">
+                            <span class="fw-bold">Sub Region: </span>${obj.subregion}
+                          </p>
+
+                          <p class="m_c_capital">
+                            <span class="fw-bold">Capital: </span>${obj.capital}
+                          </p>
+                        </div>
+                        <div class="col">
+                          <p class="m_c_lvlDomain">
+                            <span class="fw-bold">Top Level Domain: </span>${obj.topLevelDomain}
+                          </p>
+
+                          <p class="m_c_currencies">
+                            <span class="fw-bold">Currencies: </span>${obj.currencies.name}
+                          </p>
+
+                          <p class="m_c_lang">
+                            <span class="fw-bold">Languages: </span>${obj.languages.name}
+                          </p>
+                        </div>
+                        <footer id="borderCountries" class="container mt-4">
+                          <p class="fw-bold me-1">Border Countries:</p>
+
+                          <buttton type="button" id="btnBorders1" class="btnBorders btn shadow"
+                            >${obj.borders}</buttton
+                          >
+                          <buttton type="button" id="btnBorders2" class="btnBorders btn shadow"
+                            >${obj.borders}</buttton
+                          >
+                          <buttton type="button" id="btnBorders3" class="btnBorders btn shadow"
+                            >${obj.borders}</buttton
+                          >
+                        </footer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!------- FIN MODAL PAISES ------->
 
       <section class="container">
         <div
@@ -95,22 +202,3 @@
     </main>
   </body>
 </html>
-
-<!--<div 
-  class="col">
-          <div class="card h-100">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a longer card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        style="width: 240px"
-
-        class="form-select"
-      -->
