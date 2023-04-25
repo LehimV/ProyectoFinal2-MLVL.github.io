@@ -47,13 +47,13 @@ const infoModal = (obj) => {
   div.className = "modalCard";
   div.innerHTML = `    
       
-                <div class="card m-auto mb-3" style="max-width: 88%">
+                <div class="card border-0 m-auto mb-3" style="max-width: 88%">
                   <div class="row g-0">
                     <div class="col-md-6">
                       <img
                         id="modalFlag"
                         src="${obj.flags.svg}"
-                        class="d-flex m-auto w-100 h-100"
+                        class="d-flex m-auto w-100"
                         alt="Country Flag"
                       />
                     </div>
