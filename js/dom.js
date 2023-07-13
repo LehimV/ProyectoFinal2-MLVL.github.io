@@ -60,7 +60,7 @@ const infoModal = (obj) => {
                     <div class="col-md-6">
                       <div class="card-body row mt-5 ms-0">
                         <div class="col">
-                          <p class="m_c_name">${obj.name.common}</p>
+                          <p class="m_c_name fs-3 fw-bold">${obj.name.common}</p>
                           <p class="m_c_native">
                             <span class="fw-bold">Native Name: </span>${obj.nativeName}
                           </p>
