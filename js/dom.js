@@ -41,7 +41,7 @@ const updateRegions = (text) => {
 const infoModal = (obj) => {
   let num = obj.population;
   let numConvertido = num.toLocaleString();
-  console.log(num.toLocaleString());
+  //console.log(num.toLocaleString());
 
   const div = document.createElement("div");
   div.className = "modalCard";
